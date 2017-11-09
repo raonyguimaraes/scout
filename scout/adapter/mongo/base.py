@@ -76,6 +76,9 @@ class MongoAdapter(GeneHandler, CaseHandler, InstituteHandler, EventHandler,
         self.disease_term_collection = database.disease_term
         self.variant_collection = database.variant
         self.acmg_collection = database.acmg
+        self.exon_collection = database.exon
+        self.transcript_collection = database.transcript
+        self.exon_collection = database.exon
 
     def __str__(self):
         return "MongoAdapter(db={0})".format(self.db)

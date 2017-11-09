@@ -42,4 +42,12 @@ INDEXES = {
             ('thousand_genomes_frequency', ASCENDING)],
             name="caseid_varianttype_variantrank_panels_thousandg")
     ],
+    'transcript_collection': [
+        IndexModel([
+            ('build', ASCENDING),
+            ('hgnc_id', ASCENDING),
+            ('length', DESCENDING)],
+            name="hgncid_length"),
+    ],
+    
 }
