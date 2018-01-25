@@ -83,7 +83,7 @@ def parse_hpo_phenotypes(hpo_lines):
     hpo_terms = {}
     logger.info("Parsing hpo phenotypes...")
     for index, line in enumerate(hpo_lines):
-        if index > 0:
+        if index > 0 and len(line) > 0:
             hpo_info = parse_hpo_phenotype(line)
             hpo_term = hpo_info['hpo_id']
             hgnc_symbol = hpo_info['hgnc_symbol']
@@ -110,7 +110,7 @@ def parse_hpo_diseases(hpo_lines):
     diseases = {}
     logger.info("Parsing hpo diseases...")
     for index, line in enumerate(hpo_lines):
-        if index > 0:
+        if index > 0 and len(line) > 0:
             disease_info = parse_hpo_disease(line)
             if disease_info:
                 disease_nr = disease_info['disease_nr']
@@ -157,7 +157,7 @@ def parse_hpo_genes(hpo_lines):
     logger.info("Parsing HPO genes ...")
     genes = {}
     for index, line in enumerate(hpo_lines):
-        if index > 0:
+        if index > 0 and len(line) > 0:
             gene_info = parse_hpo_gene(line)
             hgnc_symbol = gene_info['hgnc_symbol']
             description = gene_info['description']
